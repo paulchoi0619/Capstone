@@ -1,5 +1,67 @@
 .container{
+  height: 90vh;
+  margin: 50px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.button {
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+  background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+  background-color:#eae0c2;
+  border-radius:15px;
+  border:2px solid #333029;
+  display:inline-block;
+  cursor:pointer;
+  color:#505739;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  padding:12px 16px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+}
+.button:hover {
+  background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+  background-color:#ccc2a6;
+}
+.button:active {
+  position:relative;
+  top:1px;
+}
+
+
+#switch{
+  border: solid black;
+  margin: 50px;
+}
+
+#download{
+  border: solid black;
+  margin: 50px;
+}
+
+#practice{
+  border: solid black;
+  padding: 50px;
+}
+
+#play{
+  border: solid black;
+  padding: 50px;
+}
+
+
+#sidebar{
+  border: solid black;
+}
+
+.heading{
+  border: solid black;
+  text-align: center;
+  grid-row: 1;
+  grid-column: 1/4;
+  padding: 50px;
 }
