@@ -1,23 +1,21 @@
+/*
 let score = document.getElementById("scoreCanvas");
 let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
+*/
 let clicked = false;
-const array = ["Polish","Korean","Georgian","Spanish","Arabic","Russian","Ukrainian","Greek","English"];
+
+let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jovi",},
+{fileName: "take.mp3", song:"Take on Me", artist: "Aha"},
+{fileName:"wake.mp3", song:"Wake Me Up Before You Go-Go", artist:"Wham!"},
+
+];
 let btn=[];
-const language = ["polish","korean","georgian","spanish","arabic","russian","ukrainian","greek"];
 const number = ["1","2","3","4"];
-let combo=[];
-for(let i=0;i<8;i++){
-  for(let j=0;j<4;j++){
-    combo.push(language[i]+number[j]);
-  }
-}
-let randomNumber;
-let song;
-let start = document.querySelector("#start");
-let video;
-let source;
+
+let start = document.querySelector(".start");
+
 
 function updateScore(){
   ctx.fillStyle = 'white';
@@ -239,166 +237,6 @@ btn[3].addEventListener("click", function() {
   }
   
 });
-
-
-btn[4].addEventListener("click", function() {
-  if(combo[randomNumber].includes("arabic")){
-    totalScore++;
-    updateScore();
-    if(question ==10){
-      alert("Correct! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Correct");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
-  else{
-    if(question ==10){
-      alert("Wrong! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Wrong");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
- 
-});
-
-
-
-btn[5].addEventListener("click", function() {
-  if(combo[randomNumber].includes("russian")){
-    totalScore++;
-    updateScore();
-    if(question ==10){
-      alert("Correct! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Correct");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
-  else{
-    if(question ==10){
-      alert("Wrong! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Wrong");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
-
-});
-
-
-btn[6].addEventListener("click", function() {
-  if(combo[randomNumber].includes("ukrainian")){
-    totalScore++;
-    updateScore();
-    if(question ==10){
-      alert("Correct! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Correct");
-    combo.splice(randomNumber,1);
-      randomNumber= Math.floor(Math.random() * (combo.length-1));
-      song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
-  else{
-    if(question ==10){
-      alert("Wrong! Total Score is "+totalScore);
-      location.reload();
-    }
-    else{
-    alert("Wrong");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-    }
-  }
- 
-});
-
-
-btn[7].addEventListener("click", function() {
- 
-  if(combo[randomNumber].includes("greek")){
-    totalScore++;
-    updateScore();
-    if(question ==10){
-      alert("Correct! Total Score is "+totalScore);
-      location.reload();
-    }
-    alert("Correct");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-song= combo[randomNumber];
-      
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-  }
-  else{
-    if(question ==10){
-      alert("Wrong! Total Score is "+totalScore);
-      location.reload();
-    }
-    alert("Wrong");
-    combo.splice(randomNumber,1);
-    randomNumber= Math.floor(Math.random() * (combo.length-1));
-    song= combo[randomNumber];
-      source.setAttribute("src", song+".mp4");
-      video.load();
-      question++;
-  }
-
-});
-
-
-
-
-
-
-
 
 clicked = true;
 }
