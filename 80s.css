@@ -1,0 +1,62 @@
+body{
+    background-image: url("80s.jpg");
+  }
+
+
+.start{
+    background-color: rgb(0, 255, 55);
+    color:black;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 25px 50px;
+    border-radius: 25%;;
+    transition-duration: 0.1s;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+      
+}
+.start:hover{
+    background-color: #d7ffc7; /* Green */
+  
+}
+
+.btn0,.btn1{
+    float:left;
+    background-color: rgb(0, 255, 55);
+    color:black;
+    cursor: pointer;
+    font-size: 30px;
+    width:50%;
+    height:200px;
+    border-radius: 10%;;
+    transition-duration: 0.1s;
+    position: relative;
+    top: 60%;
+    -ms-transform: translateY(90%);
+    transform: translateY(90%);
+}
+.btn2,.btn3{
+    float:left;
+    background-color: rgb(0, 255, 55);
+    color:black;
+    cursor: pointer;
+    font-size: 30px;
+    width:50%;
+    height:200px;
+    border-radius: 10%;;
+    transition-duration: 0.1s;
+    position: relative;
+    top: 60%;
+    -ms-transform: translateY(90%);
+    transform: translateY(90%);
+}
+.btn0:hover,.btn1:hover,.btn2:hover,.btn3:hover{
+    background-color: #d7ffc7; /* Green */
+  
+}
