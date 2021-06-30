@@ -42,6 +42,56 @@
 #sidebar-head{
   border: solid black;
   grid-row:1;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#on-button{
+  border: solid black;
+  grid-row:1;
+ }
+
+#download-button{
+  border: solid black;
+  grid-row:1;
+}
+
+
+/*this is for the download button*/
+
+
+.d-container {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 10px;
+  width:max-content;
+  padding: 12px 12px 10px;
+  border: 4px solid rgb(63,27,9);
+  border-radius: 15px;
+  background:linear-gradient(to bottom, rgb(255, 249, 166) 5%, rgb(255, 255, 6) 100%);
+  text-decoration: none;
+  transition: all 1.2s ease-in-out;
+  text-align: center;
+  transition-duration: 5ms;
+}
+
+.d-container:hover{
+  background:linear-gradient(to bottom, rgb(148,236,0) 5%, #84cc62 100%);
+  transform: scale(1.2);
+}
+
+.d-button{
+  font-family:'Benne', serif;
+  color: rgb(63,27,9);
+  font-weight: bold;
+
+}
+
+.on-text{
+  margin-left: 40px;
+  margin-top: 10px;
+  color: white;
 }
 
 /* The switch - the box around the slider */
@@ -200,19 +250,4 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-
-/*this is for the download button*/
-
-
-.d-container {
-  display: inline-block;
-  padding: 12px 12px 10px;
-  border: 0;
-  border-radius: 3px;
-  background: #bf4d28;
-  text-decoration: none;
-  transition: all 1.2s ease-in-out;
-
 }
