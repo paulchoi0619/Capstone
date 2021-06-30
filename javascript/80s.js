@@ -4,8 +4,7 @@ let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
 */
-let scoreTick;
-let scoreTrack=100;
+
 let totalscore=0;
 let current=1;
 let timeTick
@@ -102,16 +101,7 @@ function timer(){
     timeTick = setInterval(timer, 1000);
   }
 }
-function score(){
- 
-  scoreTrack--;
-  if(time==0){
-    clearInterval(scoreTick);
-    scoreTrack=100;
-    
-    scoreTick = setInterval(score, 1000);
-  }
-}
+
 
 
 start.addEventListener('click', function(event){
@@ -186,11 +176,9 @@ btn[0].addEventListener("click", function() {
   clearInterval(timeTick);
   timeOver = setInterval(setTime, 10000);
   timeTick = setInterval(timer, 1000);
-  scoreTick = setInterval(score, 1000);
+  
   if(btn[0].innerText == object.answer){
-    totalScore+=scoreTrack;
-    scoreElement.innerText=totalscore;
-    clearInterval(scoreTick);
+   
   }
   else{
     console.log("Incorrect");
@@ -207,11 +195,9 @@ btn[1].addEventListener("click", function() {
   clearInterval(timeTick);
   timeOver = setInterval(setTime, 10000);
   timeTick = setInterval(timer, 1000);
-  scoreTick = setInterval(score, 1000);
+ 
   if(btn[1].innerText == object.answer){
-    totalScore+=scoreTrack;
-    scoreElement.innerText=totalscore;
-    clearInterval(scoreTick);
+  
     
    
   }
@@ -234,11 +220,9 @@ btn[2].addEventListener("click", function() {
   clearInterval(timeTick);
   timeOver = setInterval(setTime, 10000);
   timeTick = setInterval(timer, 1000);
-  scoreTick = setInterval(score, 1000);
+ 
   if(btn[2].innerText == object.answer){
-    totalScore+=scoreTrack;
-    scoreElement.innerText=totalscore;
-    clearInterval(scoreTick);
+   
    
   }
   else{
@@ -260,11 +244,9 @@ btn[3].addEventListener("click", function() {
   clearInterval(timeTick);
   timeOver = setInterval(setTime, 10000);
 timeTick = setInterval(timer, 1000);
-scoreTick = setInterval(score, 1000);
+
   if(btn[3].innerText == object.answer){
-    totalScore+=scoreTrack;
-    scoreElement.innerText=totalscore;
-    clearInterval(scoreTick);
+   
     
 
   
@@ -279,7 +261,7 @@ scoreTick = setInterval(score, 1000);
 });
 timeOver = setInterval(setTime, 10000);
 timeTick = setInterval(timer, 1000);
-scoreTick = setInterval(score, 1000);
+
 clicked = true;
 }
 
