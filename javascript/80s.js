@@ -4,6 +4,8 @@ let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
 */
+let scoreTick;
+let scoreTrack=100;
 let totalscore=0;
 let current=1;
 let timeTick
@@ -20,11 +22,11 @@ let source;
 let randomOption;
 let artist;
 let btnName;
-let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jovi",pic:"bon.jpg"},
-{fileName: "take.mp3", song:"Take on Me", artist: "Aha", pic:"aha.jpg"},
-{fileName:"wake.mp3", song:"Wake Me Up Before You Go-Go", artist:"Wham!", pic:"wham.jpg"},
-{fileName:"called.mp3", song:"Crazy Little Thing Called Love", artist:"Queen", pic:"queen.jpg"},
-{fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics", pic:"eurythmics.jpg"}
+let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jovi"},
+{fileName: "take.mp3", song:"Take on Me", artist: "Aha"},
+{fileName:"wake.mp3", song:"Wake Me Up Before You Go-Go", artist:"Wham!"},
+{fileName:"called.mp3", song:"Crazy Little Thing Called Love", artist:"Queen"},
+{fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics"}
 ];
 let btn=[];
 let start = document.querySelector(".start");
@@ -44,13 +46,7 @@ function shuffle(array) {
   return array;
 }
 
-function updateScore(){
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, score.width, score.height);
-  ctx.fillStyle = 'black';
-  ctx.font= "60px Monaco";
-  ctx.fillText(totalScore,130,100);
-  }
+
 function optionGenerator(){
   randomOption = Math.floor(Math.random() * 4);
   shuffle(songs);
@@ -93,7 +89,8 @@ function setTime(){
 }
 let time =10;
 let timeElement =document.querySelector(".timer");
-
+let scoreElement =document.querySelector(".score");
+scoreElement.innerText=totalscore;
 function timer(){
  
   time--;
@@ -105,6 +102,17 @@ function timer(){
     timeTick = setInterval(timer, 1000);
   }
 }
+function score(){
+ 
+  scoreTrack--;
+  if(time==0){
+    clearInterval(scoreTick);
+    scoreTrack=100;
+    
+    scoreTick = setInterval(score, 1000);
+  }
+}
+
 
 start.addEventListener('click', function(event){
 
@@ -173,12 +181,19 @@ divBtn.appendChild(btn[i]);
 
 
 btn[0].addEventListener("click", function() {
+  time=10;
   clearInterval(timeOver);
+  clearInterval(timeTick);
+  timeOver = setInterval(setTime, 10000);
+  timeTick = setInterval(timer, 1000);
+  scoreTick = setInterval(score, 1000);
   if(btn[0].innerText == object.answer){
-    alert("Correct");
+    totalScore+=scoreTrack;
+    scoreElement.innerText=totalscore;
+    clearInterval(scoreTick);
   }
   else{
-    alert("Incorrect");
+    console.log("Incorrect");
   }
   reset();
 });
@@ -187,15 +202,26 @@ btn[0].addEventListener("click", function() {
 
 
 btn[1].addEventListener("click", function() {
+  time=10;
   clearInterval(timeOver);
+  clearInterval(timeTick);
+  timeOver = setInterval(setTime, 10000);
+  timeTick = setInterval(timer, 1000);
+  scoreTick = setInterval(score, 1000);
   if(btn[1].innerText == object.answer){
-    alert("Correct");
+    totalScore+=scoreTrack;
+    scoreElement.innerText=totalscore;
+    clearInterval(scoreTick);
+    
+   
   }
   else{
-    alert("Incorrect");
+    console.log("Incorrect");
+   
+    
   }
+ 
   reset();
-
 
  
 });
@@ -203,15 +229,25 @@ btn[1].addEventListener("click", function() {
 
 
 btn[2].addEventListener("click", function() {
+  time=10;
   clearInterval(timeOver);
+  clearInterval(timeTick);
+  timeOver = setInterval(setTime, 10000);
+  timeTick = setInterval(timer, 1000);
+  scoreTick = setInterval(score, 1000);
   if(btn[2].innerText == object.answer){
-    alert("Correct");
+    totalScore+=scoreTrack;
+    scoreElement.innerText=totalscore;
+    clearInterval(scoreTick);
+   
   }
   else{
-    alert("Incorrect");
+    console.log("Incorrect");
+    
+    
   }
-  
   reset();
+ 
  
 
 });
@@ -219,12 +255,23 @@ btn[2].addEventListener("click", function() {
 
 
 btn[3].addEventListener("click", function() {
+  time=10;
   clearInterval(timeOver);
+  clearInterval(timeTick);
+  timeOver = setInterval(setTime, 10000);
+timeTick = setInterval(timer, 1000);
+scoreTick = setInterval(score, 1000);
   if(btn[3].innerText == object.answer){
-    alert("Correct");
+    totalScore+=scoreTrack;
+    scoreElement.innerText=totalscore;
+    clearInterval(scoreTick);
+    
+
+  
   }
   else{
-    alert("Incorrect");
+    console.log("Incorrect");
+
   }
   
   reset();
@@ -232,7 +279,7 @@ btn[3].addEventListener("click", function() {
 });
 timeOver = setInterval(setTime, 10000);
 timeTick = setInterval(timer, 1000);
-
+scoreTick = setInterval(score, 1000);
 clicked = true;
 }
 

@@ -86,16 +86,18 @@ body{
   
 }
 .timer{
+    font-size: 50px;
     position: absolute;
     left:100px;
 width: 150px;
   border: 10px solid rgb(255, 255, 255);
-  padding: 30px;
+  padding: 20px;
   margin: 20px;
   color:white;
   text-align:center;
 }
 .score{
+    font-size: 50px;
     position:absolute;
    left:1100px;
     width: 150px;
