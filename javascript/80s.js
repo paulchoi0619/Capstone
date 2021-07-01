@@ -4,7 +4,8 @@ let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
 */
-
+let object={};
+let played=[];
 let timeTrack=document.querySelector(".timer");
 let score = document.querySelector(".score");
 let totalscore=0;
@@ -14,11 +15,9 @@ let timeTick
 let timeOver;
 let question=5;
 let clicked = false;
-let object = {};
 let randomNumber;
 let name;
 let file;
-let answer;
 let audio;
 let source;
 let randomOption;
@@ -31,7 +30,7 @@ let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jov
 {fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics"},
 {fileName:"never.mp3", song:"Never Gonna Give You Up", artist:"Rick Astley"},
 {fileName:"dont.mp3", song:"Don't Stop Believin'", artist:"Journey"},
-{fileName:"beat.mp3", song:"Beat It", aritst:"Michael Jackson"},
+{fileName:"beat.mp3", song:"Beat It", artist:"Michael Jackson"},
 {fileName:"uptown.mp3", song:"Uptown Girl", artist:"Billy Joel"},
 {fileName:"africa.mp3", song:"Africa", artist:"Toto"}
 ];
@@ -88,15 +87,31 @@ function reset(){
   object.file = songs[randomNumber].fileName;
  object.artist= songs[randomNumber].artist;
  object.answer = songs[randomNumber].song;
+ let answer={artist:object.artist,song:object.answer};
+ played.push(answer);
  songs.splice(randomNumber,1);
  source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file);
  audio.load();
  optionGenerator();
 }
+function displaySongs(){
+let div=document.createElement("div");
+div.className="list"
+div.innerText="Songs Played"
+let ordered= document.createElement("ol");
+for (let i=0;i<5;i++){
+  let li = document.createElement("li");
+  li.innerText=""+played[i].artist+" - "+played[i].song;
+  ordered.appendChild(li);
+}
+div.appendChild(ordered);
+document.body.appendChild(div);
+}
 function displayScore(){
   let display =document.querySelector(".displayScore");
   display.innerText = "Your Score is "+ totalscore;
   display.style.display="block";
+  setTimeout(function(){ displaySongs();}, 3500);
  
 }
 function setTime(){
@@ -160,11 +175,11 @@ start.addEventListener('click', function(event){
  event.preventDefault();
 
  randomNumber= Math.floor(Math.random() * (songs.length));
-
  object.file = songs[randomNumber].fileName;
 object.artist= songs[randomNumber].artist;
 object.answer = songs[randomNumber].song;
-
+let answer={artist:object.artist,song:object.answer};
+played.push(answer);
 songs.splice(randomNumber,1);
 audio = document.createElement("audio");
  audio.id = "audio";
