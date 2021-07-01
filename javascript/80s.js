@@ -73,6 +73,7 @@ function optionGenerator(){
 }
 function clear(){
   timeTrack.style.display="none";
+  score.style.display="none";
   for(let i=0;i<4;i++){
     btn[i].style.display="none";
   }
@@ -91,6 +92,12 @@ function reset(){
  source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file);
  audio.load();
  optionGenerator();
+}
+function displayScore(){
+  let display =document.querySelector(".displayScore");
+  display.innerText = "Your Score is "+ totalscore;
+  display.style.display="block";
+ 
 }
 function setTime(){
   console.log(current);
@@ -121,6 +128,7 @@ function timer(){
     time=15;
     timeElement.innerHTML = time;
     timeTick = setInterval(timer, 1000);
+    displayScore();
   }
 }
 let scoreTracker=15;
@@ -133,6 +141,13 @@ function scoreTrack(){
 }
 }
 
+
+
+
+
+
+
+
 start.addEventListener('click', function(event){
 
   if (clicked == false){
@@ -142,7 +157,6 @@ start.addEventListener('click', function(event){
     timeTrack.style.display="block";
     
     score.style.display="block";
-    //updateScore();
  event.preventDefault();
 
  randomNumber= Math.floor(Math.random() * (songs.length));
@@ -218,6 +232,7 @@ btn[0].addEventListener("click", function() {
    if(current==question){
     stop();
     clear();
+    displayScore();
   }
   
   }
@@ -226,6 +241,7 @@ btn[0].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
       
     }
    
@@ -254,6 +270,7 @@ btn[1].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
     }
    
   }
@@ -262,6 +279,7 @@ btn[1].addEventListener("click", function() {
     if(current==question){
       stop();
      clear();
+     displayScore();
     }
    
   }
@@ -292,6 +310,7 @@ btn[2].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
 
     }
   }
@@ -300,6 +319,7 @@ btn[2].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
 
     }
    
@@ -330,6 +350,7 @@ btn[3].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
     }
   }
   else{
@@ -338,6 +359,7 @@ btn[3].addEventListener("click", function() {
     if(current==question){
       stop();
       clear();
+      displayScore();
     }
     
   }
