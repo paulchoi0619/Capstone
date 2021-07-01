@@ -110,6 +110,7 @@ width: 100px;
   text-align:center;
 }
 .displayScore{
+    margin-top:100px;
     text-align:center;
     font-size:50px;
     display:none;
@@ -134,3 +135,15 @@ width: 100px;
     font-family:Arial, Helvetica, sans-serif;
     font-size:50px;
 }
+.home{
+    position:relative;
+    font-family: 'Happy Monkey', cursive;
+    margin-right:900px;
+    border-radius: 100%;
+    border-width:0px;
+    width:50px;
+    height:50px;
+}
+.home:hover {
+    background-color: #aaaaaa;
+  }

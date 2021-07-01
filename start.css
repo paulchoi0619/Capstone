@@ -1,0 +1,66 @@
+body {
+    background: linear-gradient(-45deg, rgb(38, 255, 18), rgb(0, 255, 213), rgb(0, 132, 255), rgb(0, 75, 236));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.home{
+    position:absolute;
+    font-family: 'Happy Monkey', cursive;
+    margin-right:900px;
+    border-radius: 100%;
+    border-width:0px;
+    width:50px;
+    height:50px;
+}
+.home:hover {
+    background-color: #aaaaaa;
+  }
+    .button{
+     float:left;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: 'Happy Monkey', cursive;
+    font-weight:bold;
+    width:200px;
+    height:200px;
+    border-radius: 100%;
+    border-width:0px;
+    transition-duration: 0.1s;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(300px), translateX(400px);
+    transform: translateY(300px) translateX(400px);}
+  
+  
+  #b3{
+     background-color:rgb(0, 211, 0);
+  }
+  #b2{
+    background-color:yellow;
+ }
+ #b1{
+    background-color:rgb(255, 77, 77);
+ }
+ #b3:hover {
+    background-color: #d3ffd4;
+  }
+  #b2:hover {
+    background-color: #d3ffd4;
+  }
+  #b1:hover {
+    background-color: #d3ffd4;
+  }
+
+  

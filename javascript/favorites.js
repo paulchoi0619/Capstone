@@ -236,21 +236,24 @@ btn[0].addEventListener("click", function() {
   if(btn[0].innerText == object.answer){
    totalscore+=scoreTracker;
    scoreElement.innerText=totalscore;
-   reset();
    if(current==question){
     stop();
     clear();
     displayScore();
   }
+  else{
+    reset();
+  }
   
   }
   else{
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
-      
+    }
+    else{
+      reset();
     }
    
   }
@@ -274,20 +277,23 @@ btn[1].addEventListener("click", function() {
   if(btn[1].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
     }
-   
+    else{
+      reset();
+    }
   }
   else{
-    reset();
     if(current==question){
       stop();
      clear();
      displayScore();
+    }
+    else{
+      reset();
     }
    
   }
@@ -314,21 +320,25 @@ btn[2].addEventListener("click", function() {
   if(btn[2].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
+    
     if(current==question){
       stop();
       clear();
       displayScore();
 
     }
+    else{
+      reset();
+    }
   }
   else{
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
-
+    }
+    else{
+      reset();
     }
    
   }
@@ -354,23 +364,28 @@ btn[3].addEventListener("click", function() {
   if(btn[3].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
+   
     if(current==question){
       stop();
       clear();
       displayScore();
+    }
+    else{
+      reset();
     }
   }
   else{
 
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
     }
+    else{
+      reset();
+    }
     
-  }
+  } 
   scoreTracker=15;
   scoreTick = setInterval(scoreTrack,1000);
 

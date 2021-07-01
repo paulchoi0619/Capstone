@@ -1,3 +1,4 @@
+
 let object={};
 let played=[];
 let timeTrack=document.querySelector(".timer");
@@ -17,6 +18,7 @@ let source;
 let randomOption;
 let artist;
 let btnName;
+
 let songs = [{fileName:"daydream.mp3", song:"Daydream Believer", artist: "The Monkees"},
 {fileName: "more.mp3", song:"More Than a Feeling", artist: "Boston"},
 {fileName:"yesterday.mp3", song:"Yesterday Once More", artist:"The Carpenters"},
@@ -27,6 +29,7 @@ let songs = [{fileName:"daydream.mp3", song:"Daydream Believer", artist: "The Mo
 {fileName:"close.mp3", song:"Close to You", artist:"The Carpenters"},
 {fileName:"rocket.mp3", song:"Rocket Man", artist:'Elton John'}
 ];
+
 let btn=[];
 let start = document.querySelector(".start");
 
@@ -57,6 +60,7 @@ function optionGenerator(){
     
     }
     else{
+    
     btn[i].innerText = songs[i].song;
     }
     
@@ -235,22 +239,25 @@ btn[0].addEventListener("click", function() {
   if(btn[0].innerText == object.answer){
    totalscore+=scoreTracker;
    scoreElement.innerText=totalscore;
-   reset();
    if(current==question){
     stop();
     clear();
     displayScore();
   }
+  else{
+    reset();
+  }
   
   }
   else{
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
-      
     }
+    else{
+        reset();
+      }
    
   }
   scoreTracker=15;
@@ -273,21 +280,25 @@ btn[1].addEventListener("click", function() {
   if(btn[1].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
     }
+    else{
+        reset();
+      }
    
   }
   else{
-    reset();
     if(current==question){
       stop();
      clear();
      displayScore();
     }
+    else{
+        reset();
+      }
    
   }
   scoreTracker=15;
@@ -313,22 +324,24 @@ btn[2].addEventListener("click", function() {
   if(btn[2].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
-
     }
+    else{
+        reset();
+      }
   }
   else{
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
-
     }
+    else{
+        reset();
+      }
    
   }
   scoreTracker=15;
@@ -353,23 +366,27 @@ btn[3].addEventListener("click", function() {
   if(btn[3].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
     }
+    else{
+        reset();
+      }
   }
   else{
 
-    reset();
     if(current==question){
       stop();
       clear();
       displayScore();
     }
+    else{
+        reset();
+      }
     
-  }
+  } 
   scoreTracker=15;
   scoreTick = setInterval(scoreTrack,1000);
 
@@ -382,4 +399,3 @@ clicked = true;
 }
 
 });
-

@@ -111,11 +111,13 @@ width: 100px;
   text-align:center;
 }
 .displayScore{
+    margin-top:100px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align:center;
     font-size:50px;
+    font-weight:bold;
     display:none;
-    color:white;
+    color:rgb(229, 255, 0);
     overflow: hidden;
   white-space: nowrap; 
   letter-spacing: .15em; 
@@ -137,3 +139,15 @@ width: 100px;
     font-family:Arial, Helvetica, sans-serif;
     font-size:50px;
 }
+.home{
+    position:relative;
+    font-family: 'Happy Monkey', cursive;
+    margin-right:900px;
+    border-radius: 100%;
+    border-width:0px;
+    width:50px;
+    height:50px;
+}
+.home:hover {
+    background-color: #aaaaaa;
+  }
