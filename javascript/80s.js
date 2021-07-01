@@ -1,9 +1,4 @@
-/*
-let score = document.getElementById("scoreCanvas");
-let ctx = score.getContext("2d");
-let totalScore =0;
-let question =0;
-*/
+
 let object={};
 let played=[];
 let timeTrack=document.querySelector(".timer");
