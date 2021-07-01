@@ -1,6 +1,81 @@
-body{
-    background-image: url("80s.jpg");
+
+    .container{
+        height: 90vh;
+        margin: 50px;
+        display: grid;
+        grid-auto-rows: 200px;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: stretch;
+      }
+
+
+
+
+
+.heading{
+    text-align: center;
+    grid-row: 1;
+    grid-column: 1/4;
+    padding: 50px;
+    font-family: 'Molle', cursive;
+    color: rgb(255,18,19);
   }
+
+  .text-background{
+    background-color: rgb(255, 255, 6);
+    text-shadow: 2px 2px rgb(63,27,9);
+    border-radius: 200px;
+    font-size: 25px;
+    width:250px;
+    margin-left: 225px;
+    box-shadow: 5px 5px 15px 5px rgb(63,27,9);
+  }
+
+
+.JukeboxBack{
+    background-image: url("JukeboxBackground.jpg");
+    background-repeat: no-repeat;
+    height: 495px;
+    grid-column: 1/3;
+    grid-row:2;
+}
+
+
+#advertise{
+    float: right;
+    grid-column: 3;
+  }
+
+
+
+
+
+
+/*this is the animated background*/
+
+html, body {
+    width: 100%;
+    height:100%;
+  }
+
+  body {
+      background: linear-gradient(-45deg, rgb(255,18,19), rgb(237,205,2), rgb(63,27,9), rgb(148,236,0));
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
 
 
 .start{
@@ -12,18 +87,18 @@ body{
     border-radius: 25%;;
     transition-duration: 0.1s;
     align-items: center;
-    margin: 0;
-    position: absolute;
+    margin-top: 235px;
+    margin-left: 400px;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 
-      
+
 }
 .start:hover{
     background-color: #d7ffc7; /* Green */
-  
+
 }
 .btn0{
     background-color: rgb(255, 255, 255);
@@ -83,7 +158,7 @@ body{
 }
 .btn0:hover,.btn1:hover,.btn2:hover,.btn3:hover{
     background-color: #d7ffc7; /* Green */
-  
+
 }
 .timer{
     font-size: 50px;

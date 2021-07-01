@@ -210,7 +210,7 @@ input:checked + .slider:before {
 
 
 
-.text{
+.text-background{
   background-color: rgb(255, 255, 6);
   text-shadow: 2px 2px rgb(63,27,9);
   border-radius: 200px;
