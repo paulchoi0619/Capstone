@@ -18,18 +18,17 @@ let source;
 let randomOption;
 let artist;
 let btnName;
-
-let songs = [{fileName:"daydream.mp3", song:"Daydream Believer", artist: "The Monkees"},
-{fileName: "more.mp3", song:"More Than a Feeling", artist: "Boston"},
-{fileName:"yesterday.mp3", song:"Yesterday Once More", artist:"The Carpenters"},
-{fileName:"stopme.mp3", song:"Dont Stop Me Now", artist:"Queen"},
-{fileName:"how.mp3", song:"How Deep Is Your Love", artist:"Bee Gees"},
-{fileName:"queen.mp3", song:"Dacing Queen", artist:"Abba"},
-{fileName:"september.mp3", song:"September'", artist:"Earth, Wind & Fire"},
-{fileName:"close.mp3", song:"Close to You", artist:"The Carpenters"},
-{fileName:"rocket.mp3", song:"Rocket Man", artist:'Elton John'}
+let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jovi"},
+{fileName: "take.mp3", song:"Take on Me", artist: "Aha"},
+{fileName:"wake.mp3", song:"Wake Me Up Before You Go-Go", artist:"Wham!"},
+{fileName:"called.mp3", song:"Crazy Little Thing Called Love", artist:"Queen"},
+{fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics"},
+{fileName:"never.mp3", song:"Never Gonna Give You Up", artist:"Rick Astley"},
+{fileName:"dont.mp3", song:"Don't Stop Believin'", artist:"Journey"},
+{fileName:"beat.mp3", song:"Beat It", artist:"Michael Jackson"},
+{fileName:"uptown.mp3", song:"Uptown Girl", artist:"Billy Joel"},
+{fileName:"africa.mp3", song:"Africa", artist:"Toto"}
 ];
-
 let btn=[];
 let start = document.querySelector(".start");
 
@@ -86,7 +85,7 @@ function reset(){
  let answer={artist:object.artist,song:object.answer};
  played.push(answer);
  songs.splice(randomNumber,1);
- source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file);
+ source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file);
  audio.load();
  optionGenerator();
 }
@@ -189,7 +188,7 @@ source.src="";
 
 source.type="audio/mpeg";
 
-source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file)
+source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file)
 audio.appendChild(source);
 document.body.appendChild(audio);
 
@@ -256,8 +255,8 @@ btn[0].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
    
   }
   scoreTracker=15;
@@ -286,8 +285,8 @@ btn[1].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
    
   }
   else{
@@ -297,8 +296,8 @@ btn[1].addEventListener("click", function() {
      displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
    
   }
   scoreTracker=15;
@@ -330,8 +329,8 @@ btn[2].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
   }
   else{
     if(current==question){
@@ -340,8 +339,8 @@ btn[2].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
    
   }
   scoreTracker=15;
@@ -372,8 +371,8 @@ btn[3].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
   }
   else{
 
@@ -383,8 +382,8 @@ btn[3].addEventListener("click", function() {
       displayScore();
     }
     else{
-        reset();
-      }
+      reset();
+    }
     
   } 
   scoreTracker=15;

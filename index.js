@@ -17,4 +17,4 @@ if(downloadButton) {
       downloadButton.classList.remove('success');
     }, 8000);
   });
-};
+}

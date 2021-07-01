@@ -83,7 +83,7 @@ function reset(){
  let answer={artist:object.artist,song:object.answer};
  played.push(answer);
  songs.splice(randomNumber,1);
- source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file);
+ source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file);
  audio.load();
  optionGenerator();
 }
@@ -186,7 +186,7 @@ source.src="";
 
 source.type="audio/mpeg";
 
-source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file)
+source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file)
 audio.appendChild(source);
 document.body.appendChild(audio);
 
