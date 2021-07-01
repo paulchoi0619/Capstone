@@ -4,9 +4,11 @@ let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
 */
+
 let timeTrack=document.querySelector(".timer");
 let score = document.querySelector(".score");
 let totalscore=0;
+let scoreTick;
 let current=0;
 let timeTick
 let timeOver;
@@ -121,8 +123,15 @@ function timer(){
     timeTick = setInterval(timer, 1000);
   }
 }
+let scoreTracker=15;
 
-
+function scoreTrack(){
+  scoreTracker--;
+  if(scoreTracker==0){
+    clearInterval(scoreTick);
+    scoreTracker=15;
+}
+}
 
 start.addEventListener('click', function(event){
 
@@ -193,7 +202,8 @@ divBtn.appendChild(btn[i]);
 
 btn[0].addEventListener("click", function() {
   current++;
-  time=15;
+  time=15; 
+  clearInterval(scoreTick);
   clearInterval(timeOver);
   clearInterval(timeTick);
   if(current!=question){
@@ -202,7 +212,7 @@ btn[0].addEventListener("click", function() {
   }
   
   if(btn[0].innerText == object.answer){
-   totalscore++;
+   totalscore+=scoreTracker;
    scoreElement.innerText=totalscore;
    reset();
    if(current==question){
@@ -220,7 +230,8 @@ btn[0].addEventListener("click", function() {
     }
    
   }
- 
+  scoreTracker=15;
+  scoreTick = setInterval(scoreTrack,1000);
 });
 
 
@@ -231,12 +242,13 @@ btn[1].addEventListener("click", function() {
   time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
+  clearInterval(scoreTick);
   if(current!=question){
     timeOver = setInterval(setTime, 10000);
     timeTick = setInterval(timer, 1000);
   }
   if(btn[1].innerText == object.answer){
-    totalscore++;
+    totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
     reset();
     if(current==question){
@@ -253,7 +265,8 @@ btn[1].addEventListener("click", function() {
     }
    
   }
- 
+  scoreTracker=15;
+  scoreTick = setInterval(scoreTrack,1000);
 
 
  
@@ -266,13 +279,14 @@ btn[2].addEventListener("click", function() {
   time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
+  clearInterval(scoreTick);
   if(current!=question){
     timeOver = setInterval(setTime, 10000);
     timeTick = setInterval(timer, 1000);
   }
  
   if(btn[2].innerText == object.answer){
-    totalscore++;
+    totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
     reset();
     if(current==question){
@@ -290,8 +304,8 @@ btn[2].addEventListener("click", function() {
     }
    
   }
-
- 
+  scoreTracker=15;
+  scoreTick = setInterval(scoreTrack,1000);
  
 
 });
@@ -303,13 +317,14 @@ btn[3].addEventListener("click", function() {
   time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
+  clearInterval(scoreTick);
   if(current!=question){
     timeOver = setInterval(setTime, 10000);
     timeTick = setInterval(timer, 1000);
   }
 
   if(btn[3].innerText == object.answer){
-    totalscore++;
+    totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
     reset();
     if(current==question){
@@ -318,18 +333,21 @@ btn[3].addEventListener("click", function() {
     }
   }
   else{
-    audio.pause();
+
+    reset();
     if(current==question){
       stop();
       clear();
     }
-    reset();
+    
   }
-  
+  scoreTracker=15;
+  scoreTick = setInterval(scoreTrack,1000);
 
 });
 timeOver = setInterval(setTime, 15000);
 timeTick = setInterval(timer, 1000);
+scoreTick = setInterval(scoreTrack,1000);
 
 clicked = true;
 }
