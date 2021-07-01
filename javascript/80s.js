@@ -4,7 +4,8 @@ let ctx = score.getContext("2d");
 let totalScore =0;
 let question =0;
 */
-
+let timeTrack=document.querySelector(".timer");
+let score = document.querySelector(".score");
 let totalscore=0;
 let current=0;
 let timeTick
@@ -25,7 +26,12 @@ let songs = [{fileName:"living.mp3", song:"Living on a Prayer", artist: "Bon Jov
 {fileName: "take.mp3", song:"Take on Me", artist: "Aha"},
 {fileName:"wake.mp3", song:"Wake Me Up Before You Go-Go", artist:"Wham!"},
 {fileName:"called.mp3", song:"Crazy Little Thing Called Love", artist:"Queen"},
-{fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics"}
+{fileName:"sweet.mp3", song:"Sweet Dreams", artist:"Eurythmics"},
+{fileName:"never.mp3", song:"Never Gonna Give You Up", artist:"Rick Astley"},
+{fileName:"dont.mp3", song:"Don't Stop Believin'", artist:"Journey"},
+{fileName:"beat.mp3", song:"Beat It", aritst:"Michael Jackson"},
+{fileName:"uptown.mp3", song:"Uptown Girl", artist:"Billy Joel"},
+{fileName:"africa.mp3", song:"Africa", artist:"Toto"}
 ];
 let btn=[];
 let start = document.querySelector(".start");
@@ -63,29 +69,44 @@ function optionGenerator(){
     
 }
 }
+function clear(){
+  timeTrack.style.display="none";
+  for(let i=0;i<4;i++){
+    btn[i].style.display="none";
+  }
+}
+function stop(){
+  source.setAttribute("src", "");
+  audio.load();
+}
 //reset function
 function reset(){
   randomNumber= Math.floor(Math.random() * (songs.length));
   object.file = songs[randomNumber].fileName;
  object.artist= songs[randomNumber].artist;
  object.answer = songs[randomNumber].song;
-
+ songs.splice(randomNumber,1);
  source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/javascript/"+object.file);
  audio.load();
  optionGenerator();
 }
 function setTime(){
+  console.log(current);
+  current++;
   if(current==question){
+    
     clearInterval(timeTick);
-    clearInterval(timerOver);
+    clearInterval(timeOver);
+    stop();
+    clear();
+
   }
   else{
-  current++;
 
   reset();
   }
 }
-let time =10;
+let time =15;
 let timeElement =document.querySelector(".timer");
 let scoreElement =document.querySelector(".score");
 scoreElement.innerText=totalscore;
@@ -95,7 +116,7 @@ function timer(){
   setTimeout(function(){ timeElement.innerHTML = time;}, 900);
   if(time==0){
     clearInterval(timeTick);
-    time=10;
+    time=15;
     timeElement.innerHTML = time;
     timeTick = setInterval(timer, 1000);
   }
@@ -109,6 +130,9 @@ start.addEventListener('click', function(event){
     let startButton = document.querySelector(".start");
     startButton.style.display="none";
    
+    timeTrack.style.display="block";
+    
+    score.style.display="block";
     //updateScore();
  event.preventDefault();
 
@@ -169,32 +193,34 @@ divBtn.appendChild(btn[i]);
 
 btn[0].addEventListener("click", function() {
   current++;
-  time=10;
+  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
-  timeOver = setInterval(setTime, 10000);
-  timeTick = setInterval(timer, 1000);
+  if(current!=question){
+    timeOver = setInterval(setTime, 10000);
+    timeTick = setInterval(timer, 1000);
+  }
   
   if(btn[0].innerText == object.answer){
    totalscore++;
    scoreElement.innerText=totalscore;
+   reset();
    if(current==question){
-    console.log("hello");
-    for(let i=0;i<4;i++){
-      btn[i].style.display="none";
-    }
+    stop();
+    clear();
   }
+  
   }
   else{
-    console.log("Incorrect");
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
+      
     }
+   
   }
-  reset();
+ 
 });
 
 
@@ -202,35 +228,33 @@ btn[0].addEventListener("click", function() {
 
 btn[1].addEventListener("click", function() {
   current++;
-  time=10;
+  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
-  timeOver = setInterval(setTime, 10000);
-  timeTick = setInterval(timer, 1000);
- 
+  if(current!=question){
+    timeOver = setInterval(setTime, 10000);
+    timeTick = setInterval(timer, 1000);
+  }
   if(btn[1].innerText == object.answer){
     totalscore++;
     scoreElement.innerText=totalscore;
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
     }
    
   }
   else{
-    console.log("Incorrect");
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+     clear();
     }
-    
+   
   }
  
-  reset();
+
 
  
 });
@@ -239,33 +263,34 @@ btn[1].addEventListener("click", function() {
 
 btn[2].addEventListener("click", function() {
   current++;
-  time=10;
+  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
-  timeOver = setInterval(setTime, 10000);
-  timeTick = setInterval(timer, 1000);
+  if(current!=question){
+    timeOver = setInterval(setTime, 10000);
+    timeTick = setInterval(timer, 1000);
+  }
  
   if(btn[2].innerText == object.answer){
     totalscore++;
     scoreElement.innerText=totalscore;
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
+
     }
   }
   else{
-    console.log("Incorrect");
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
+
     }
-    
+   
   }
-  reset();
+
  
  
 
@@ -275,36 +300,35 @@ btn[2].addEventListener("click", function() {
 
 btn[3].addEventListener("click", function() {
   current++;
-  time=10;
+  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
-  timeOver = setInterval(setTime, 10000);
-timeTick = setInterval(timer, 1000);
+  if(current!=question){
+    timeOver = setInterval(setTime, 10000);
+    timeTick = setInterval(timer, 1000);
+  }
 
   if(btn[3].innerText == object.answer){
     totalscore++;
     scoreElement.innerText=totalscore;
+    reset();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
     }
   }
   else{
-    console.log("Incorrect");
+    audio.pause();
     if(current==question){
-      console.log("hello");
-      for(let i=0;i<4;i++){
-        btn[i].style.display="none";
-      }
+      stop();
+      clear();
     }
+    reset();
   }
   
-  reset();
 
 });
-timeOver = setInterval(setTime, 10000);
+timeOver = setInterval(setTime, 15000);
 timeTick = setInterval(timer, 1000);
 
 clicked = true;

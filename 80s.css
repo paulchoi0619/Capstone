@@ -86,24 +86,25 @@ body{
   
 }
 .timer{
-    font-size: 50px;
+    display:none;
+    font-size: 40px;
     position: absolute;
     left:100px;
-width: 150px;
-  border: 10px solid rgb(255, 255, 255);
-  padding: 20px;
+width: 100px;
+  border: 5px solid rgb(255, 255, 255);
+  padding: 30px;
   margin: 20px;
   color:white;
   text-align:center;
 }
 .score{
+    display:none;
     font-size: 50px;
     position:absolute;
    left:1100px;
     width: 150px;
   border: 10px solid rgb(255, 208, 0);
   border-radius: 10%;
-  padding: 30px;
   margin: 20px;
   color:rgb(255, 255, 255);
   text-align:center;
