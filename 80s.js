@@ -85,7 +85,7 @@ function reset(){
  let answer={artist:object.artist,song:object.answer};
  played.push(answer);
  songs.splice(randomNumber,1);
- source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file);
+ source.setAttribute("src", ""+object.file);
  audio.load();
  optionGenerator();
 }
@@ -118,6 +118,7 @@ function setTime(){
     clearInterval(timeOver);
     stop();
     clear();
+    displaySongs()
 
   }
   else{
@@ -138,7 +139,6 @@ function timer(){
     time=15;
     timeElement.innerHTML = time;
     timeTick = setInterval(timer, 1000);
-    displayScore();
   }
 }
 let scoreTracker=15;
@@ -188,7 +188,7 @@ source.src="";
 
 source.type="audio/mpeg";
 
-source.setAttribute("src", "/Users/Polly/Documents/GitHub/Capstone/"+object.file)
+source.setAttribute("src", ""+object.file)
 audio.appendChild(source);
 document.body.appendChild(audio);
 
