@@ -57,7 +57,6 @@ function optionGenerator(){
     
     }
     else{
-    
     btn[i].innerText = songs[i].song;
     }
     
