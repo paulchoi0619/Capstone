@@ -40,7 +40,6 @@
 
 
 #sidebar-head{
-  border: solid black;
   grid-row:1;
   display: grid;
   grid-template-rows: 1fr;
@@ -48,12 +47,10 @@
 }
 
 #on-button{
-  border: solid black;
   grid-row:1;
  }
 
 #download-button{
-  border: solid black;
   grid-row:1;
 }
 
@@ -166,7 +163,6 @@ input:checked + .slider:before {
 
 
 #sidebar{
-  border: solid black;
   grid-row:1;
 }
 
@@ -179,7 +175,6 @@ input:checked + .slider:before {
 
 
 #choose{
-  border: solid black;
   padding: 50px;
   grid-column: 1/2;
   text-align: inherit;
@@ -205,7 +200,6 @@ input:checked + .slider:before {
 }
 
 .heading{
-  border: solid black;
   text-align: center;
   grid-row: 1;
   grid-column: 1/3;
