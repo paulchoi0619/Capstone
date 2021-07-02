@@ -122,8 +122,8 @@ function setTime(){
 
   }
   else{
-
   reset();
+  
   }
 }
 let time =15;
@@ -131,7 +131,6 @@ let timeElement =document.querySelector(".timer");
 let scoreElement =document.querySelector(".score");
 scoreElement.innerText=totalscore;
 function timer(){
- 
   time--;
   setTimeout(function(){ timeElement.innerHTML = time;}, 900);
   if(time==0){
@@ -226,14 +225,14 @@ divBtn.appendChild(btn[i]);
 
 btn[0].addEventListener("click", function() {
   current++;
-  time=15; 
   clearInterval(scoreTick);
   clearInterval(timeOver);
   clearInterval(timeTick);
-  if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+  
+    time=15; 
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
-  }
+  
   
   if(btn[0].innerText == object.answer){
    totalscore+=scoreTracker;
@@ -268,14 +267,14 @@ btn[0].addEventListener("click", function() {
 
 btn[1].addEventListener("click", function() {
   current++;
-  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
   clearInterval(scoreTick);
-  if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+  
+    time=15; 
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
-  }
+  
   if(btn[1].innerText == object.answer){
     totalscore+=scoreTracker;
     scoreElement.innerText=totalscore;
@@ -311,14 +310,14 @@ btn[1].addEventListener("click", function() {
 
 btn[2].addEventListener("click", function() {
   current++;
-  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
   clearInterval(scoreTick);
-  if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+  
+    time=15; 
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
-  }
+  
  
   if(btn[2].innerText == object.answer){
     totalscore+=scoreTracker;
@@ -353,14 +352,14 @@ btn[2].addEventListener("click", function() {
 
 btn[3].addEventListener("click", function() {
   current++;
-  time=15;
   clearInterval(timeOver);
   clearInterval(timeTick);
   clearInterval(scoreTick);
-  if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+ 
+    time=15; 
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
-  }
+  
 
   if(btn[3].innerText == object.answer){
     totalscore+=scoreTracker;

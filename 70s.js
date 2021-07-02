@@ -232,7 +232,7 @@ btn[0].addEventListener("click", function() {
   clearInterval(timeOver);
   clearInterval(timeTick);
   if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
   }
   
@@ -274,7 +274,7 @@ btn[1].addEventListener("click", function() {
   clearInterval(timeTick);
   clearInterval(scoreTick);
   if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
   }
   if(btn[1].innerText == object.answer){
@@ -317,7 +317,7 @@ btn[2].addEventListener("click", function() {
   clearInterval(timeTick);
   clearInterval(scoreTick);
   if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
   }
  
@@ -359,7 +359,7 @@ btn[3].addEventListener("click", function() {
   clearInterval(timeTick);
   clearInterval(scoreTick);
   if(current!=question){
-    timeOver = setInterval(setTime, 10000);
+    timeOver = setInterval(setTime, 15000);
     timeTick = setInterval(timer, 1000);
   }
 
